@@ -1,0 +1,411 @@
+@font-face {
+    font-family: Hubot Sans;
+    src:
+      url('Hubot-Sans.woff2') format('woff2 supports variations'),
+      url('Hubot-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+  }
+
+  @font-face {
+    font-family: Mona-Sans;
+    src: url(./Mona-Sans.ttf)
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* ::selection {
+    color: white;
+    background-color: black;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Mona-Sans;
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    padding-bottom: 5vw;
+}
+
+#home {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;    
+}
+#circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000000;
+    position: absolute;
+    transition: cubic-bezier(0.19, 1, 0.22, 1)0.4s;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1vw 3vw;
+}
+
+#nav img {
+    width: 140px;
+}
+
+#right {
+    display: flex;
+    align-items: center;
+    gap: 20px;  
+}
+
+#right h4 {
+    font-size: 1.4vw;
+    text-transform: lowercase;
+    font-weight: 400;
+}
+/* #right h4::selection {
+    color: white;
+    background-color: black;
+} */
+
+#right i {
+    font-size: 24px;
+    margin-top: 3px;
+}
+
+/* mera main hai */
+#homemain {
+    width: 100%;
+    padding: 15vw 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+}
+
+
+/* mera elem hai */
+.headings {
+    width: 50vh;
+    height: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 50px;
+    position: relative;
+   
+}
+.videoplay {
+    width: 300px; 
+    height: 300px;
+    border-radius: 50%; 
+    overflow: hidden; 
+    position: absolute;
+    scale: 0;
+    opacity: 0;
+    
+}
+
+/* mera img hai */
+.videoplay video { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: all linear 0.2s;
+     
+}
+/* overlay same hai */
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    background-color: transparent;  
+}
+
+
+#homemain h1 {
+    font-weight: 500;
+    letter-spacing: -0.04vw;
+    font-size: 1.34vw;
+}
+#homemain .headings h1 {
+    color: transparent;
+    -webkit-text-stroke: 1.8px black;
+    font-size: 7vw;
+    line-height: 1;
+    font-weight: 600;
+    z-index: 999;
+    letter-spacing: -5px;
+    /* mix-blend-mode: difference; */
+}
+
+/* #homemain .headings h1:hover {
+    color: black;
+} */
+
+#homelast {
+    padding: 15vw 13vw;
+
+}
+
+#homelast p {
+    width: 80%;
+    font-size: 1.6vw;
+    line-height: 1.4;
+    letter-spacing:.05vw;
+    font-weight: 500;
+    margin-top: 2vw;
+}
+
+/* #homelast p::selection {
+    color: white;
+    background-color: black;
+} */
+
+#featured {
+    padding-top: 10vw;
+    padding-left: 13vw;
+    
+}
+
+.fheading> h1 {
+    font-size: 2.8vw;
+    font-weight: 400;
+    line-height: 1;
+
+}
+
+.fheading> h1:nth-child(2) {
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+}
+
+#fimages {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    margin-top: 3vw;
+   
+}
+
+#fleft {
+    overflow: hidden;
+    width: 45%;
+    height: inherit;
+    
+}
+
+.fleftelem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+    
+}
+.fleftelem h1 {
+    font-size: 2.5vw;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 1.5vw 0;
+}
+.fleftelem h3 {
+    font-size: 1.3vw;
+    font-weight: 400;
+}
+.fleftelem h4 {
+    opacity: 0.5;
+}
+
+#fright {
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* #fright .images {
+    width: 90%;
+    height: 90%;
+    
+} */
+#fright .images video {
+    width:100%;
+    height: 100%;
+    background-size: cover;
+    background-clip: border-box;
+    object-fit: cover;
+}
+
+.btndiv {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btndiv button {
+    padding: 1.3vw 2.5vw;
+    border-radius: 100px;
+    border: 2px solid #e6e6e6;
+    background-color: white;
+    font-size: 1.2vw;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+#dev {
+    width: 100%;
+    padding: 5vw 13vw;
+
+}
+
+#dev h1 {
+    font-size: 3.8vw;
+    font-weight: 400;
+    width: 60%;
+    line-height: 1;
+}
+
+#dev p {
+    font-size: 1.8vw;
+    margin-top: 3vw;
+    letter-spacing: -.05vw;
+
+}
+
+#slides {
+    padding: 3vw 5vw;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.slide{
+    width: 30%;
+    
+    
+}
+.slide .img {
+    width: 100%;
+    height: 400px;  
+}
+
+.slide .img video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.slide .tag {
+    margin: 20px 0;
+    padding: 10px 22px;
+    width: fit-content;
+    border-radius: 100px;
+    background-color: #f0f0f0;
+}
+
+.slide h3 {
+    font-size: 1.4vw;
+    font-weight: 500;
+    letter-spacing: -.05vw;
+}
+
+#minicircle {
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 99999;
+    background-color: rgb(30, 30, 30);
+}
+
+
+
+.chronicle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    line-height: 1;
+    width: 180px;
+    height: 48px;
+    border-radius: 50px;
+    padding: 12px 20px;
+    cursor: pointer;
+    border: 1px solid rgb(33, 33, 33);
+    transition: background .4s linear;
+    will-change: background;
+  }
+  
+
+  .chronicle a {
+    font-size: 10px;
+  }
+  .chronicle:hover {
+    border: 0.5px solid rgb(33, 33, 33);
+    
+  }
+  
+  .chronicle:hover span:nth-of-type(1) em {
+    opacity: 0;
+    transform: rotateX(90deg) scaleX(.9) translate3d(0,-10px,0);
+  }
+  
+  .chronicle:hover span:nth-of-type(2) em {
+    opacity: 1;
+    transform: rotateX(0deg) scaleX(1) translateZ(0);
+    transition: transform .75s cubic-bezier(.645,.045,.355,1),opacity .35s linear .3s;
+  }
+  
+  span {
+    position: relative;
+    display: block;
+    perspective: 108px;
+    
+  }
+  
+  span:nth-of-type(2) {
+    position: absolute;
+  }
+  
+  em {
+    font-style: normal;
+    display: inline-block;
+    font-size: 1.125rem;
+    color: rgb(28, 28, 28);
+    font-weight: 600;
+    will-change: transform,opacity,transition;
+    transition: transform .55s cubic-bezier(.645,.045,.355,1),opacity .35s linear .2s;
+  }
+  
+  span:nth-of-type(1) em {
+    transform-origin: top;
+  }
+  
+  span:nth-of-type(2) em {
+    opacity: 0;
+    transform: rotateX(-90deg) scaleX(.9) translate3d(0,10px,0);
+    transform-origin: bottom;
+  }
